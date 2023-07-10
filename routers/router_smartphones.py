@@ -10,7 +10,7 @@ from fastapi.security import OAuth2PasswordBearer
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth")
 
 router = APIRouter(
-    prefix='/api/smartphones',
+    prefix='/smartphones',
     tags=['SmartPhones']
 )
 
