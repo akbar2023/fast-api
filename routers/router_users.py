@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
 from classes import models_orm, schemas_dto, database
 import utilities
+from typing import List
 
 router = APIRouter(
     prefix='/users',
@@ -38,7 +39,7 @@ async def get_all_users(cursor: Session = Depends(database.get_cursor)):
     return all_users
 
 # Exercice not an actual use case
-@router.get('/{user_id}', response_model=schemas_dto.User_response)
+@router.get('/{user_id}', response_model=List[schemas_dto.User_response])
 async def get_user_by_id(user_id:int, cursor: Session = Depends(database.get_cursor)):
     corresponding_user = cursor.query(models_orm.Users).filter(models_orm.Users.id == user_id).first()
     if(corresponding_user):
