@@ -28,7 +28,6 @@ async def list_transactions(
         all_transactions = cursor.query(models_orm.Transactions).filter(models_orm.Transactions.user_id == decoded_user_id).all()
         return all_transactions # data format à ajuster cela besoin
 
-# Exercice : get all transactions
 # DTO pour récupérer le smartphone_id car le user_id est déjà dans le JWToken
 class transaction_post(BaseModel):
     smartphone_id:int
