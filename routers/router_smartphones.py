@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from classes.database import get_cursor
 from classes import models_orm, schemas_dto
 import utilities
-from typing import Annotated
+from typing_extensions import Annotated
 from fastapi.security import OAuth2PasswordBearer
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth")
 
