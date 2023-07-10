@@ -33,13 +33,15 @@ class Smartphone_GETID_Response(BaseModel): # format de sortie (response)
     class Config: # Lors des réponses, nous avons souvant à utiliser les données sortie de notre database. La Config ORM nous permet de "choisir" les columnes à montrer. 
         orm_mode= True
 
-class Customer_POST_Body (BaseModel):
-    customerEmail:str
-    customerPassword: str
+class User_POST_Body (BaseModel):
+    email:str
+    password: str
+    is_admin: bool
 
-class Customer_response (BaseModel): 
+class User_response (BaseModel): 
     id: int
     email:str
+    is_admin: bool
     create_at: datetime
     # not sending the password
     class Config: # Importante pour la traduction ORM -> DTO

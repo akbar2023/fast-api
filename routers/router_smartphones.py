@@ -6,7 +6,7 @@ from classes.database import get_cursor
 from classes import models_orm, schemas_dto
 
 router = APIRouter(
-    prefix='/smartphones',
+    prefix='/api/smartphones',
     tags=['SmartPhones']
 )
 

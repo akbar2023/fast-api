@@ -9,8 +9,8 @@ tags_metadata = [
         },
     },
     {
-        "name": "Customers",
-        "description": "Create and list customers of our API",
+        "name": "Users",
+        "description": "Create and list users of our API",
     },
     {
         "name": "Transactions",
