@@ -33,13 +33,13 @@ async def create_user(
             detail="User already exists" 
         )
     
-@router.get('', response_model=list[schemas_dto.User_response])
+@router.get('', response_model=List[schemas_dto.User_response])
 async def get_all_users(cursor: Session = Depends(database.get_cursor)):
     all_users = cursor.query(models_orm.Users).all()
     return all_users
 
 # Exercice not an actual use case
-@router.get('/{user_id}', response_model=List[schemas_dto.User_response])
+@router.get('/{user_id}', response_model=schemas_dto.User_response)
 async def get_user_by_id(user_id:int, cursor: Session = Depends(database.get_cursor)):
     corresponding_user = cursor.query(models_orm.Users).filter(models_orm.Users.id == user_id).first()
     if(corresponding_user):
